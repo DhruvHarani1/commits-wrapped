@@ -7,9 +7,9 @@ const n = (x) => x.toLocaleString('en-US');
 
 export function shareText(s) {
   return (
-    `My Git Wrapped ${s.year} ${s.persona.emoji}\n` +
+    `My Commits Wrapped ${s.year} ${s.persona.emoji}\n` +
     `I'm ${s.persona.name}: ${n(s.total)} commits, ${s.activeDays} active days, ${s.streak.length}-day streak.\n` +
-    `Peak hour: ${fmtHour(s.peakHour)}. Get yours: npx git-wrapped`
+    `Peak hour: ${fmtHour(s.peakHour)}. Get yours: npx commits-wrapped`
   );
 }
 
@@ -39,7 +39,7 @@ export function renderHtml(s) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Git Wrapped ${s.year} · ${esc(s.repo)}</title>
+<title>Commits Wrapped ${s.year} · ${esc(s.repo)}</title>
 <style>
 *{box-sizing:border-box;margin:0}
 body{min-height:100vh;display:grid;place-items:center;padding:32px 16px;background:#0b0b14;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#f4f4ff}
@@ -80,7 +80,7 @@ button:active{transform:scale(.97)}
 </head>
 <body>
 <main class="card" id="card">
-  <div class="top"><b>✦ Git Wrapped ${s.year}</b><span>${esc(s.repo)}</span></div>
+  <div class="top"><b>✦ Commits Wrapped ${s.year}</b><span>${esc(s.repo)}</span></div>
   <section class="hero">
     <div class="emoji">${s.persona.emoji}</div>
     <div class="persona">${esc(s.persona.name)}</div>
@@ -106,7 +106,7 @@ button:active{transform:scale(.97)}
     <div><b>${s.oops}</b>oops / reverts</div>
     <div><b>${s.wip}</b>wip / test</div>
   </div>
-  <div class="foot">Get yours → <code>npx git-wrapped</code></div>
+  <div class="foot">Get yours → <code>npx commits-wrapped</code></div>
   <div class="actions"><button id="png">Download PNG</button> <button id="copy">Copy share text</button></div>
 </main>
 <script>
@@ -127,7 +127,7 @@ document.getElementById('png').onclick = () => {
     cv.toBlob((b) => {
       const a = document.createElement('a');
       a.href = URL.createObjectURL(b);
-      a.download = 'git-wrapped-${s.year}.png';
+      a.download = 'commits-wrapped-${s.year}.png';
       a.click();
     });
   };

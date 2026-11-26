@@ -27,7 +27,7 @@ export function renderTerminal(s) {
   const line = (x = '') => L.push(x);
 
   line();
-  line(`  ${bold(pink('✦ GIT WRAPPED ' + s.year))}  ${dim('·')}  ${bold(s.repo)}`);
+  line(`  ${bold(pink('✦ COMMITS WRAPPED ' + s.year))}  ${dim('·')}  ${bold(s.repo)}`);
   line(`  ${dim('─'.repeat(52))}`);
 
   if (!s.total) {

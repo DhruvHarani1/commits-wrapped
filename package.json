@@ -1,10 +1,10 @@
 {
-  "name": "git-wrapped",
+  "name": "commits-wrapped",
   "version": "0.1.0",
   "description": "Spotify Wrapped for your git repo. One command, zero dependencies, a shareable card.",
   "type": "module",
   "bin": {
-    "git-wrapped": "bin/cli.js"
+    "commits-wrapped": "bin/cli.js"
   },
   "main": "src/index.js",
   "exports": {
@@ -36,10 +36,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DhruvHarani1/git-wrapped.git"
+    "url": "git+https://github.com/DhruvHarani1/commits-wrapped.git"
   },
-  "homepage": "https://github.com/DhruvHarani1/git-wrapped#readme",
+  "homepage": "https://github.com/DhruvHarani1/commits-wrapped#readme",
   "bugs": {
-    "url": "https://github.com/DhruvHarani1/git-wrapped/issues"
+    "url": "https://github.com/DhruvHarani1/commits-wrapped/issues"
   }
 }

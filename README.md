@@ -1,9 +1,9 @@
-# ✦ git-wrapped
+# ✦ commits-wrapped
 
 **Spotify Wrapped for your git repo.** One command. Zero dependencies. A card you'll want to post.
 
 ```bash
-npx git-wrapped
+npx commits-wrapped
 ```
 
 You get a terminal report **and** a self-contained HTML card (opens automatically) with:
@@ -22,11 +22,11 @@ Everything runs **locally**. Nothing is uploaded, ever.
 ## Usage
 
 ```bash
-npx git-wrapped                 # current repo, current year
-npx git-wrapped --me            # only your commits (git config user.email)
-npx git-wrapped --year 2025     # a different year
-npx git-wrapped ../other-repo   # another repo
-npx git-wrapped --json          # raw stats
+npx commits-wrapped                 # current repo, current year
+npx commits-wrapped --me            # only your commits (git config user.email)
+npx commits-wrapped --year 2025     # a different year
+npx commits-wrapped ../other-repo   # another repo
+npx commits-wrapped --json          # raw stats
 ```
 
 | Option | Description |
@@ -34,7 +34,7 @@ npx git-wrapped --json          # raw stats
 | `-y, --year <YYYY>` | Year to wrap (default: current year) |
 | `--me` | Only your commits |
 | `-a, --author <pattern>` | Only commits by matching author |
-| `-o, --out <file>` | HTML card path (default `./git-wrapped-<year>.html`) |
+| `-o, --out <file>` | HTML card path (default `./commits-wrapped-<year>.html`) |
 | `--no-html` | Terminal output only |
 | `--no-open` | Write the card but don't open it |
 | `--json` | Print stats as JSON |
@@ -44,7 +44,7 @@ Merge commits are skipped. Times use each author's own local clock. Lockfiles an
 ## API
 
 ```js
-import { wrapped, renderHtml } from 'git-wrapped';
+import { wrapped, renderHtml } from 'commits-wrapped';
 
 const stats = wrapped({ cwd: '.', year: 2026, me: true });
 console.log(stats.persona.name, stats.total);

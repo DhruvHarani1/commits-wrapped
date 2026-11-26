@@ -60,7 +60,7 @@ test('renders html and escapes repo name', () => {
   s.repo = '<script>alert(1)</script>';
   const html = renderHtml(s);
   assert.ok(!html.includes('<script>alert(1)'));
-  assert.match(html, /npx git-wrapped/);
+  assert.match(html, /npx commits-wrapped/);
 });
 
 test('renders valid escaped svg', () => {

@@ -79,8 +79,8 @@ export function renderSvg(s) {
   <rect width="${SVG_W}" height="${SVG_H}" fill="url(#pink)"/>
   <rect width="${SVG_W}" height="${SVG_H}" fill="url(#blue)"/>
 
-  <text x="${L}" y="118" font-size="24" font-weight="800" letter-spacing="5" fill="#fff">✦ GIT WRAPPED ${s.year}</text>
-  <text x="${SVG_W - L}" y="118" text-anchor="end" font-size="24" letter-spacing="2" fill="#fff" fill-opacity="0.8">${esc(trunc(s.repo, 24).toUpperCase())}</text>
+  <text x="${L}" y="118" font-size="24" font-weight="800" letter-spacing="5" fill="#fff">✦ COMMITS WRAPPED ${s.year}</text>
+  <text x="${SVG_W - L}" y="118" text-anchor="end" font-size="24" letter-spacing="2" fill="#fff" fill-opacity="0.8">${esc(trunc(s.repo, 18).toUpperCase())}</text>
 
   <text x="${SVG_W / 2}" y="320" text-anchor="middle" font-size="150">${s.persona.emoji}</text>
   <text x="${SVG_W / 2}" y="426" text-anchor="middle" font-size="68" font-weight="900" fill="#fff">${esc(s.persona.name)}</text>
@@ -98,7 +98,7 @@ export function renderSvg(s) {
 
   ${files ? `<text x="${L}" y="1140" font-size="20" font-weight="700" letter-spacing="4" fill="#fff" fill-opacity="0.7">FILES YOU COULD NOT LEAVE ALONE</text>${files}` : ''}
 
-  <text x="${SVG_W / 2}" y="1316" text-anchor="middle" font-size="26" fill="#fff" fill-opacity="0.9">Get yours → <tspan font-family="${MONO}" font-weight="700">npx git-wrapped</tspan></text>
+  <text x="${SVG_W / 2}" y="1316" text-anchor="middle" font-size="26" fill="#fff" fill-opacity="0.9">Get yours → <tspan font-family="${MONO}" font-weight="700">npx commits-wrapped</tspan></text>
 </svg>
 `;
 }

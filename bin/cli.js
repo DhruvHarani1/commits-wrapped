@@ -8,16 +8,16 @@ import { wrapped, renderTerminal, renderHtml, renderSvg } from '../src/index.js'
 const pkg = JSON.parse(fs.readFileSync(fileURLToPath(new URL('../package.json', import.meta.url)), 'utf8'));
 
 const HELP = `
-git-wrapped v${pkg.version}: Spotify Wrapped for your git repo
+commits-wrapped v${pkg.version}: Spotify Wrapped for your git repo
 
 Usage
-  npx git-wrapped [path] [options]
+  npx commits-wrapped [path] [options]
 
 Options
   -y, --year <YYYY>     Year to wrap (default: current year)
       --me              Only your commits (uses git config user.email)
   -a, --author <pat>    Only commits by author matching <pat>
-  -o, --out <file>      HTML card path (default: ./git-wrapped-<year>.html)
+  -o, --out <file>      HTML card path (default: ./commits-wrapped-<year>.html)
       --no-html         Terminal output only
       --no-open         Write the HTML card but do not open it
       --json            Print raw stats as JSON
@@ -87,7 +87,7 @@ try {
   console.log(renderTerminal(stats));
 
   if (o.html && stats.total) {
-    const out = path.resolve(o.out ?? `git-wrapped-${stats.year}.html`);
+    const out = path.resolve(o.out ?? `commits-wrapped-${stats.year}.html`);
     fs.writeFileSync(out, renderHtml(stats));
     const svgOut = out.replace(/\.html?$/i, '') + '.svg';
     fs.writeFileSync(svgOut, renderSvg(stats));
@@ -96,6 +96,6 @@ try {
     if (o.open) openFile(out);
   }
 } catch (err) {
-  console.error(`git-wrapped: ${err.message}`);
+  console.error(`commits-wrapped: ${err.message}`);
   process.exit(1);
 }
