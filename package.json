@@ -33,5 +33,13 @@
     "git-stats",
     "spotify-wrapped"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DhruvHarani1/git-wrapped.git"
+  },
+  "homepage": "https://github.com/DhruvHarani1/git-wrapped#readme",
+  "bugs": {
+    "url": "https://github.com/DhruvHarani1/git-wrapped/issues"
+  }
 }
