@@ -1,0 +1,37 @@
+{
+  "name": "git-wrapped",
+  "version": "0.1.0",
+  "description": "Spotify Wrapped for your git repo. One command, zero dependencies, a shareable card.",
+  "type": "module",
+  "bin": {
+    "git-wrapped": "bin/cli.js"
+  },
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "git",
+    "wrapped",
+    "year-in-review",
+    "stats",
+    "commits",
+    "cli",
+    "developer-tools",
+    "git-stats",
+    "spotify-wrapped"
+  ],
+  "license": "MIT"
+}
